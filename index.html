@@ -402,7 +402,17 @@
         '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/>'
       ];
 
-      var state = { lang: "ru" };
+      var state = { lang: (function () {
+        var supported = ["ru", "uk", "en"];
+        var list = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || navigator.userLanguage || "en"];
+        for (var i = 0; i < list.length; i++) {
+          var code = (list[i] || "").toLowerCase().split("-")[0];
+          if (supported.indexOf(code) !== -1) return code;
+        }
+        return "en";
+      })() };
 
       function setStoreBtn(btn, d) {
         var small = btn.querySelector("[data-store-small]");
