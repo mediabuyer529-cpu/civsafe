@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivSafe — Политика конфиденциальности и условия использования</title>
+    <meta name="description" content="Политика конфиденциальности и условия использования приложения CivSafe. RU · UA · EN." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="canonical" href="https://civsafe.app/privacy-terms/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230a0a0b'/%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z' fill='none' stroke='%23ff6600' stroke-width='1.6'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --accent: #ff6600;
+        --bg: #0a0a0b;
+        --card: #151517;
+        --border: #26262a;
+        --text: #ededed;
+        --muted: #9a9aa2;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      header {
+        position: sticky; top: 0; z-index: 10;
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 12px; padding: 14px 20px;
+        background: rgba(10,10,11,0.92);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(8px);
+      }
+      .brand { font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; font-size: 16px; color: var(--accent); text-decoration: none; }
+      .langs { display: flex; gap: 6px; }
+      .langs button {
+        cursor: pointer; border: 1px solid var(--border); background: transparent;
+        color: var(--muted); font-weight: 700; font-size: 12px; letter-spacing: 0.08em;
+        padding: 5px 10px; border-radius: 2px; line-height: 1;
+      }
+      .langs button.active { border-color: var(--accent); background: var(--accent); color: #0a0a0b; }
+      .tabs { display: flex; gap: 10px; max-width: 720px; margin: 24px auto 0; padding: 0 20px; }
+      .tabs button {
+        cursor: pointer; background: var(--card); border: 1px solid var(--border);
+        color: var(--text); font-weight: 700; font-size: 13px; padding: 10px 16px; border-radius: 4px;
+      }
+      .tabs button.active { border-color: var(--accent); color: var(--accent); }
+      main { width: 100%; max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
+      h1 { font-size: 26px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin: 0 0 6px; }
+      .updated { font-size: 12px; color: var(--muted); margin: 0 0 28px; }
+      .intro { font-size: 15px; color: var(--muted); line-height: 1.7; margin: 0 0 16px; }
+      section { margin-top: 28px; }
+      h2 { font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px; margin: 0 0 12px; }
+      .p { font-size: 15px; color: var(--muted); line-height: 1.7; margin: 0 0 10px; }
+      footer { max-width: 720px; margin: 0 auto; padding: 8px 20px 70px; font-size: 13px; color: var(--muted); }
+      footer a.mail { color: var(--accent); text-decoration: none; }
+      @media (max-width: 560px) {
+        .tabs { flex-direction: column; padding: 0 28px; }
+        .tabs button { width: 100%; }
+        main { padding: 24px 28px 80px; }
+        footer { padding: 8px 28px 70px; }
+        h1 { font-size: 23px; }
+      }
+      .backhome {
+        display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+        background: var(--card); border: 1px solid var(--border); color: var(--text);
+        font-weight: 700; font-size: 14px; padding: 12px 20px; border-radius: 8px;
+        margin-bottom: 28px; transition: border-color .15s ease, color .15s ease;
+      }
+      .backhome:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="../index.html">CivSafe</a>
+      <div class="langs" id="langs">
+        <button data-lang="ru" class="active">RU</button>
+        <button data-lang="uk">UA</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </header>
+
+    <div class="tabs" id="tabs">
+      <button data-doc="privacy" class="active"></button>
+      <button data-doc="terms"></button>
+    </div>
+
+    <main id="content"></main>
+    <footer>
+      <div><a class="backhome" id="backHome" href="../index.html">← <span></span></a></div>
+      <a class="mail" href="mailto:support@civsafe.app">support@civsafe.app</a>
+    </footer>
+
+    <script type="application/json" id="data">
+{
+  "privacy": {
+    "ru": {
+      "title": "Политика конфиденциальности",
+      "updated": "Последнее обновление: 2026-06-06",
+      "intro": [
+        "Приложение CivSafe («Приложение», «мы») создано для предоставления справочной информации по выживанию. Мы уважаем вашу конфиденциальность и стремимся собирать как можно меньше данных.",
+        "Эта Политика объясняет, какие данные обрабатываются при использовании Приложения."
+      ],
+      "sections": [
+        { "heading": "1. Какие данные мы собираем", "body": [
+          "Приложение не требует регистрации и не запрашивает ваше имя, телефон, адрес или иную личную информацию.",
+          "Настройки приложения (выбранный язык, страна, статус полного доступа) хранятся локально на вашем устройстве и не передаются нам."
+        ] },
+        { "heading": "2. Покупки в приложении", "body": [
+          "Полный доступ приобретается как разовая покупка через App Store. Платёж обрабатывает Apple — мы не получаем и не храним данные вашей банковской карты.",
+          "Для управления покупками и восстановления доступа используется сервис RevenueCat. Ему передаётся анонимный идентификатор пользователя и информация о транзакции (факт и дата покупки). Эти данные не позволяют установить вашу личность."
+        ] },
+        { "heading": "3. Озвучивание текста", "body": [
+          "Функция аудио использует встроенный в ваше устройство синтезатор речи (Apple). Текст разделов озвучивается локально на устройстве."
+        ] },
+        { "heading": "4. Аналитика и отслеживание", "body": [
+          "Приложение не использует сторонние рекламные сети и не отслеживает вас между приложениями и сайтами."
+        ] },
+        { "heading": "5. Данные детей", "body": [
+          "Приложение предназначено для пользователей 16 лет и старше и не адресовано детям."
+        ] },
+        { "heading": "6. Ваши права", "body": [
+          "Поскольку настройки хранятся локально, вы можете удалить все данные, удалив Приложение с устройства."
+        ] },
+        { "heading": "7. Контакты", "body": [
+          "По вопросам конфиденциальности пишите на support@civsafe.app."
+        ] }
+      ]
+    },
+    "uk": {
+      "title": "Політика конфіденційності",
+      "updated": "Останнє оновлення: 2026-06-06",
+      "intro": [
+        "Застосунок CivSafe («Застосунок», «ми») створено для надання довідкової інформації з виживання. Ми поважаємо вашу приватність і прагнемо збирати якомога менше даних.",
+        "Ця Політика пояснює, які дані обробляються під час використання Застосунку."
+      ],
+      "sections": [
+        { "heading": "1. Які дані ми збираємо", "body": [
+          "Застосунок не потребує реєстрації та не запитує ваше ім’я, телефон, адресу чи іншу особисту інформацію.",
+          "Налаштування застосунку (обрана мова, країна, статус повного доступу) зберігаються локально на вашому пристрої та не передаються нам."
+        ] },
+        { "heading": "2. Покупки в застосунку", "body": [
+          "Повний доступ купується як разова покупка через App Store. Платіж обробляє Apple — ми не отримуємо й не зберігаємо дані вашої банківської картки.",
+          "Для керування покупками та відновлення доступу використовується сервіс RevenueCat. Йому передається анонімний ідентифікатор користувача та інформація про транзакцію (факт і дата покупки). Ці дані не дозволяють встановити вашу особу."
+        ] },
+        { "heading": "3. Озвучення тексту", "body": [
+          "Функція аудіо використовує вбудований у ваш пристрій синтезатор мовлення (Apple). Текст розділів озвучується локально на пристрої."
+        ] },
+        { "heading": "4. Аналітика та відстеження", "body": [
+          "Застосунок не використовує сторонні рекламні мережі та не відстежує вас між застосунками й сайтами."
+        ] },
+        { "heading": "5. Дані дітей", "body": [
+          "Застосунок призначений для користувачів 16 років і старше та не адресований дітям."
+        ] },
+        { "heading": "6. Ваші права", "body": [
+          "Оскільки налаштування зберігаються локально, ви можете видалити всі дані, видаливши Застосунок із пристрою."
+        ] },
+        { "heading": "7. Контакти", "body": [
+          "З питань конфіденційності пишіть на support@civsafe.app."
+        ] }
+      ]
+    },
+    "en": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: 2026-06-06",
+      "intro": [
+        "The CivSafe app (\"App\", \"we\") was built to provide reference survival information. We respect your privacy and aim to collect as little data as possible.",
+        "This Policy explains what data is processed when you use the App."
+      ],
+      "sections": [
+        { "heading": "1. Data we collect", "body": [
+          "The App requires no registration and does not ask for your name, phone number, address, or any other personal information.",
+          "App settings (selected language, country, full-access status) are stored locally on your device and are not sent to us."
+        ] },
+        { "heading": "2. In-app purchases", "body": [
+          "Full access is bought as a one-time purchase through the App Store. Payment is processed by Apple — we never receive or store your payment card details.",
+          "We use RevenueCat to manage purchases and restore access. It receives an anonymous user identifier and transaction information (that a purchase was made and its date). This data cannot identify you personally."
+        ] },
+        { "heading": "3. Text-to-speech", "body": [
+          "The audio feature uses the speech synthesizer built into your device (Apple). Section text is read aloud locally on the device."
+        ] },
+        { "heading": "4. Analytics and tracking", "body": [
+          "The App uses no third-party advertising networks and does not track you across apps or websites."
+        ] },
+        { "heading": "5. Children's data", "body": [
+          "The App is intended for users aged 16 and older and is not directed at children."
+        ] },
+        { "heading": "6. Your rights", "body": [
+          "Because settings are stored locally, you can delete all data by removing the App from your device."
+        ] },
+        { "heading": "7. Contact", "body": [
+          "For privacy questions, contact support@civsafe.app."
+        ] }
+      ]
+    }
+  },
+  "terms": {
+    "ru": {
+      "title": "Условия использования",
+      "updated": "Последнее обновление: 2026-06-06",
+      "intro": [
+        "Используя приложение CivSafe («Приложение»), вы соглашаетесь с настоящими Условиями. Если вы не согласны — пожалуйста, не используйте Приложение."
+      ],
+      "sections": [
+        { "heading": "1. Назначение и важное предупреждение", "body": [
+          "Приложение предоставляет ОБЩУЮ справочную информацию по безопасности и выживанию и носит исключительно образовательный характер.",
+          "Информация в Приложении НЕ является профессиональной медицинской, юридической, военной или спасательной консультацией и не заменяет её.",
+          "В случае реальной чрезвычайной ситуации немедленно обращайтесь к местным экстренным службам и следуйте указаниям официальных органов власти.",
+          "Вы используете информацию из Приложения на собственный риск."
+        ] },
+        { "heading": "2. Покупки и доступ", "body": [
+          "Часть разделов доступна бесплатно. Полный доступ открывается разовой покупкой через App Store и действует бессрочно на аккаунтах Apple ID, совершивших покупку.",
+          "Восстановить покупку можно кнопкой «Восстановить покупку» в Приложении.",
+          "Возвраты обрабатываются Apple в соответствии с правилами App Store."
+        ] },
+        { "heading": "3. Отказ от ответственности", "body": [
+          "Приложение предоставляется «как есть», без каких-либо гарантий точности, полноты или пригодности для конкретной цели.",
+          "В максимально допустимой законом степени мы не несём ответственности за любой ущерб, возникший в результате использования или невозможности использования Приложения."
+        ] },
+        { "heading": "4. Интеллектуальная собственность", "body": [
+          "Все материалы Приложения защищены и предоставляются только для личного некоммерческого использования."
+        ] },
+        { "heading": "5. Лицензия конечного пользователя", "body": [
+          "К использованию Приложения применяется стандартное лицензионное соглашение Apple (Apple Standard EULA), если иное не предусмотрено отдельно."
+        ] },
+        { "heading": "6. Контакты", "body": [
+          "По вопросам, связанным с Приложением, пишите на support@civsafe.app."
+        ] }
+      ]
+    },
+    "uk": {
+      "title": "Умови використання",
+      "updated": "Останнє оновлення: 2026-06-06",
+      "intro": [
+        "Використовуючи застосунок CivSafe («Застосунок»), ви погоджуєтеся з цими Умовами. Якщо ви не згодні — будь ласка, не використовуйте Застосунок."
+      ],
+      "sections": [
+        { "heading": "1. Призначення та важливе попередження", "body": [
+          "Застосунок надає ЗАГАЛЬНУ довідкову інформацію з безпеки та виживання і має виключно освітній характер.",
+          "Інформація в Застосунку НЕ є професійною медичною, юридичною, військовою чи рятувальною консультацією і не замінює її.",
+          "У разі реальної надзвичайної ситуації негайно звертайтеся до місцевих екстрених служб і дотримуйтесь вказівок офіційних органів влади.",
+          "Ви використовуєте інформацію із Застосунку на власний ризик."
+        ] },
+        { "heading": "2. Покупки та доступ", "body": [
+          "Частина розділів доступна безкоштовно. Повний доступ відкривається разовою покупкою через App Store і діє безстроково на акаунтах Apple ID, що здійснили покупку.",
+          "Відновити покупку можна кнопкою «Відновити покупку» у Застосунку.",
+          "Повернення коштів обробляються Apple відповідно до правил App Store."
+        ] },
+        { "heading": "3. Відмова від відповідальності", "body": [
+          "Застосунок надається «як є», без жодних гарантій точності, повноти чи придатності для конкретної мети.",
+          "У максимально дозволеній законом мірі ми не несемо відповідальності за будь-яку шкоду, що виникла внаслідок використання або неможливості використання Застосунку."
+        ] },
+        { "heading": "4. Інтелектуальна власність", "body": [
+          "Усі матеріали Застосунку захищені та надаються лише для особистого некомерційного використання."
+        ] },
+        { "heading": "5. Ліцензія кінцевого користувача", "body": [
+          "До використання Застосунку застосовується стандартна ліцензійна угода Apple (Apple Standard EULA), якщо інше не передбачено окремо."
+        ] },
+        { "heading": "6. Контакти", "body": [
+          "З питань, пов’язаних із Застосунком, пишіть на support@civsafe.app."
+        ] }
+      ]
+    },
+    "en": {
+      "title": "Terms of Use",
+      "updated": "Last updated: 2026-06-06",
+      "intro": [
+        "By using the CivSafe app (\"App\"), you agree to these Terms. If you do not agree, please do not use the App."
+      ],
+      "sections": [
+        { "heading": "1. Purpose and important notice", "body": [
+          "The App provides GENERAL reference information about safety and survival and is for educational purposes only.",
+          "Information in the App is NOT professional medical, legal, military, or rescue advice and is not a substitute for it.",
+          "In a real emergency, contact your local emergency services immediately and follow the instructions of official authorities.",
+          "You use the information in the App at your own risk."
+        ] },
+        { "heading": "2. Purchases and access", "body": [
+          "Some sections are available for free. Full access is unlocked with a one-time purchase through the App Store and remains available indefinitely on the Apple ID accounts that made the purchase.",
+          "You can restore your purchase using the \"Restore purchase\" button in the App.",
+          "Refunds are handled by Apple in accordance with App Store policies."
+        ] },
+        { "heading": "3. Disclaimer", "body": [
+          "The App is provided \"as is\", without any warranty of accuracy, completeness, or fitness for a particular purpose.",
+          "To the maximum extent permitted by law, we are not liable for any damages arising from the use of, or inability to use, the App."
+        ] },
+        { "heading": "4. Intellectual property", "body": [
+          "All App content is protected and provided for personal, non-commercial use only."
+        ] },
+        { "heading": "5. End-user license", "body": [
+          "Use of the App is subject to Apple's Standard End User License Agreement (Apple Standard EULA), unless separately stated otherwise."
+        ] },
+        { "heading": "6. Contact", "body": [
+          "For questions about the App, contact support@civsafe.app."
+        ] }
+      ]
+    }
+  }
+}
+    </script>
+
+    <script>
+      var DATA = JSON.parse(document.getElementById("data").textContent);
+      var TAB_LABELS = {
+        ru: { privacy: "Политика конфиденциальности", terms: "Условия использования" },
+        uk: { privacy: "Політика конфіденційності", terms: "Умови використання" },
+        en: { privacy: "Privacy Policy", terms: "Terms of Use" }
+      };
+      var BACK_LABELS = { ru: "На главную", uk: "На головну", en: "Back to home" };
+      var initialDoc = location.hash.replace("#", "") === "terms" ? "terms" : "privacy";
+      var state = { lang: "ru", doc: initialDoc };
+
+      function render() {
+        document.documentElement.lang = state.lang;
+        // language buttons
+        document.querySelectorAll("#langs button").forEach(function (b) {
+          b.classList.toggle("active", b.dataset.lang === state.lang);
+        });
+        // tab buttons + labels
+        document.querySelectorAll("#tabs button").forEach(function (b) {
+          b.textContent = TAB_LABELS[state.lang][b.dataset.doc];
+          b.classList.toggle("active", b.dataset.doc === state.doc);
+        });
+        document.querySelector("#backHome span").textContent = BACK_LABELS[state.lang];
+        var d = DATA[state.doc][state.lang];
+        document.title = "CivSafe — " + d.title;
+        var html = "<h1>" + d.title + "</h1>";
+        html += '<p class="updated">' + d.updated + "</p>";
+        d.intro.forEach(function (p) { html += '<p class="intro">' + p + "</p>"; });
+        d.sections.forEach(function (s) {
+          html += "<section><h2>" + s.heading + "</h2>";
+          s.body.forEach(function (p) { html += '<p class="p">' + p + "</p>"; });
+          html += "</section>";
+        });
+        document.getElementById("content").innerHTML = html;
+      }
+
+      document.getElementById("langs").addEventListener("click", function (e) {
+        if (e.target.dataset.lang) { state.lang = e.target.dataset.lang; render(); }
+      });
+      document.getElementById("tabs").addEventListener("click", function (e) {
+        if (e.target.dataset.doc) {
+          state.doc = e.target.dataset.doc;
+          if (history.replaceState) history.replaceState(null, "", "#" + state.doc);
+          render();
+        }
+      });
+      window.addEventListener("hashchange", function () {
+        state.doc = location.hash.replace("#", "") === "terms" ? "terms" : "privacy";
+        render();
+      });
+      render();
+    </script>
+  </body>
+</html>

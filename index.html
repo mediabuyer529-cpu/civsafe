@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivSafe — памятка по выживанию в условиях войны | офлайн, RU·UA·EN</title>
+    <meta name="description" content="CivSafe — приложение-справочник по выживанию для гражданских в условиях войны: что делать при обстреле, авиаударе, атаке дронов, химической угрозе, как собрать тревожный чемоданчик и эвакуироваться с детьми, пожилыми и питомцами. Работает офлайн. Русский, украинский, английский." />
+    <meta name="keywords" content="выживание в войне, что делать при обстреле, воздушная тревога, атака дронов, тревожный чемоданчик, эвакуация, первая помощь, укрытие, химическая угроза, гражданская оборона, civil defense, survival guide, памятка выживания, CivSafe" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="canonical" href="https://civsafe.app/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230a0a0b'/%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z' fill='none' stroke='%23ff6600' stroke-width='1.6'/%3E%3C/svg%3E" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CivSafe" />
+    <meta property="og:title" content="CivSafe — памятка по выживанию в условиях войны" />
+    <meta property="og:description" content="Справочник по выживанию для гражданских: обстрелы, дроны, химугрозы, эвакуация, первая помощь. Работает офлайн. RU · UA · EN." />
+    <meta property="og:url" content="https://civsafe.app/" />
+    <meta property="og:image" content="https://civsafe.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="uk_UA" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CivSafe — памятка по выживанию в условиях войны" />
+    <meta name="twitter:description" content="Справочник по выживанию для гражданских: обстрелы, дроны, химугрозы, эвакуация, первая помощь. Работает офлайн. RU · UA · EN." />
+    <meta name="twitter:image" content="https://civsafe.app/og.png" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "CivSafe",
+      "operatingSystem": "iOS",
+      "applicationCategory": "ReferenceApplication",
+      "inLanguage": ["ru", "uk", "en"],
+      "description": "Справочник по выживанию для гражданских в условиях войны: обстрелы, авиаудары, атаки дронов, химические угрозы, мины, эвакуация, первая помощь, укрытие. Работает офлайн.",
+      "url": "https://civsafe.app/",
+      "image": "https://civsafe.app/og.png",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --accent: #ff6600;
+        --bg: #0a0a0b;
+        --bg2: #0f0f11;
+        --card: #151517;
+        --border: #26262a;
+        --text: #ededed;
+        --muted: #9a9aa2;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0; background: var(--bg); color: var(--text);
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      a { color: inherit; }
+      .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+      header {
+        position: sticky; top: 0; z-index: 20;
+        background: rgba(10,10,11,0.9); backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+      .brand { display: flex; align-items: center; gap: 8px; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; font-size: 16px; text-decoration: none; color: var(--text); }
+      .brand .dot { width: 10px; height: 10px; border-radius: 2px; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+      .langs { display: flex; gap: 6px; }
+      .langs button {
+        cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--muted);
+        font-weight: 700; font-size: 12px; letter-spacing: 0.08em; padding: 6px 10px; border-radius: 2px; line-height: 1;
+      }
+      .langs button.active { border-color: var(--accent); background: var(--accent); color: #0a0a0b; }
+
+      /* App Store badge */
+      .appstore {
+        display: inline-flex; align-items: center; gap: 11px; text-decoration: none;
+        background: #000; border: 1px solid #5a5a5a; border-radius: 11px; padding: 9px 18px 9px 16px;
+        transition: transform .15s ease, border-color .15s ease;
+      }
+      .appstore:hover { transform: translateY(-2px); border-color: #8a8a8a; }
+      .appstore svg { display: block; height: 30px; width: auto; fill: #fff; }
+      .appstore .t { display: flex; flex-direction: column; line-height: 1; text-align: left; color: #fff; }
+      .appstore .t .s1 { font-size: 11px; font-weight: 500; opacity: 0.9; }
+      .appstore .t .s2 { font-size: 20px; font-weight: 600; margin-top: 3px; letter-spacing: 0.2px; }
+
+      .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+      .hero::before {
+        content: ""; position: absolute; inset: 0;
+        background:
+          radial-gradient(120% 80% at 80% -10%, rgba(255,102,0,0.20), transparent 60%),
+          repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 44px),
+          repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 44px);
+        pointer-events: none;
+      }
+      .hero-inner { position: relative; padding: 84px 0 92px; }
+      .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; font-size: 12px; margin: 0 0 16px; }
+      h1 { font-size: clamp(34px, 6vw, 60px); line-height: 1.05; font-weight: 900; text-transform: uppercase; margin: 0 0 22px; max-width: 15ch; text-wrap: balance; overflow-wrap: break-word; }
+      h1 .o { color: var(--accent); display: block; }
+      .lead { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); line-height: 1.7; max-width: 56ch; margin: 0 0 36px; }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+      .offline { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+      .offline .pulse { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+
+      /* hero layout + phone slider */
+      .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+      .hero-copy { min-width: 0; }
+      .hero-visual { display: flex; flex-direction: column; align-items: center; }
+      .phone {
+        position: relative; width: 300px; max-width: 80vw;
+        background: #111114; border: 1px solid #2c2c31; border-radius: 38px; padding: 12px;
+        box-shadow: 0 30px 70px rgba(0,0,0,0.55), 0 0 60px rgba(255,102,0,0.06);
+      }
+      .phone::before {
+        content: ""; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+        width: 116px; height: 22px; background: #111114; border-radius: 0 0 14px 14px; z-index: 3;
+      }
+      .phone-screen {
+        position: relative; border-radius: 27px; overflow: hidden;
+        aspect-ratio: 390 / 844; background: #0c0c0d; touch-action: pan-y; cursor: grab;
+      }
+      .phone-screen:active { cursor: grabbing; }
+      .slides { display: flex; height: 100%; will-change: transform; }
+      .slides.anim { transition: transform .45s cubic-bezier(.4,0,.2,1); }
+      .slide { flex: 0 0 100%; height: 100%; }
+      .slide img { width: 100%; height: 100%; object-fit: cover; display: block; -webkit-user-drag: none; user-select: none; pointer-events: none; }
+      .slide-cta {
+        height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        text-align: center; padding: 30px 22px; gap: 14px;
+        background: radial-gradient(120% 70% at 50% 0%, rgba(255,102,0,0.20), transparent 62%), #0c0c0d;
+      }
+      .slide-cta .lock { width: 56px; height: 56px; border-radius: 16px; background: rgba(255,102,0,0.14); display: flex; align-items: center; justify-content: center; }
+      .slide-cta .lock svg { width: 28px; height: 28px; stroke: var(--accent); fill: none; stroke-width: 2; }
+      .slide-cta h3 { font-size: 21px; font-weight: 900; text-transform: uppercase; margin: 2px 0 0; }
+      .slide-cta p { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin: 0; max-width: 30ch; }
+      .slide-cta .appstore { transform: scale(.9); margin-top: 6px; }
+      .dots { display: flex; gap: 7px; justify-content: center; margin-top: 20px; }
+      .dots button { width: 7px; height: 7px; border-radius: 50%; border: none; background: #3a3a40; cursor: pointer; padding: 0; transition: width .25s, background .25s, border-radius .25s; }
+      .dots button.active { background: var(--accent); width: 22px; border-radius: 4px; }
+
+      .value { border-bottom: 1px solid var(--border); background: var(--bg2); }
+      .value-inner { padding: 72px 0; }
+      .value h2 { font-size: clamp(24px, 3.6vw, 34px); font-weight: 900; text-transform: uppercase; margin: 0 0 18px; max-width: 20ch; }
+      .value h2 .o { color: var(--accent); }
+      .value .vlead { color: var(--muted); font-size: clamp(15px, 2vw, 18px); line-height: 1.75; max-width: 62ch; margin: 0 0 34px; }
+      .vgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .vpt h3 { font-size: 16px; font-weight: 700; margin: 0 0 7px; }
+      .vpt h3 span { color: var(--accent); }
+      .vpt p { font-size: 14px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+      .features { padding: 72px 0; }
+      .features h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin: 0 0 28px; }
+      .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .feat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+      .feat .ic { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,102,0,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+      .feat .ic svg { width: 19px; height: 19px; stroke: var(--accent); fill: none; stroke-width: 2; }
+      .feat h3 { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
+      .feat p { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+      .cta-band { border-top: 1px solid var(--border); background: var(--bg2); position: relative; overflow: hidden; }
+      .cta-band::before {
+        content: ""; position: absolute; inset: 0;
+        background: radial-gradient(80% 120% at 50% 120%, rgba(255,102,0,0.16), transparent 60%);
+        pointer-events: none;
+      }
+      .cta-inner { position: relative; padding: 72px 0; text-align: center; }
+      .cta-inner h2 { font-size: clamp(24px, 4vw, 38px); font-weight: 900; text-transform: uppercase; margin: 0 0 14px; }
+      .cta-inner p { color: var(--muted); max-width: 48ch; margin: 0 auto 28px; line-height: 1.7; font-size: 16px; }
+      .cta-inner .appstore { margin: 0 auto; }
+
+      footer { padding: 40px 0 60px; }
+      .foot { display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between; }
+      .foot .links { display: flex; flex-wrap: wrap; gap: 20px; }
+      .foot a { color: var(--muted); text-decoration: none; font-size: 14px; }
+      .foot a:hover { color: var(--accent); }
+      .foot .cp { color: #5a5a62; font-size: 13px; }
+
+      @media (max-width: 820px) {
+        .feat-grid, .vgrid { grid-template-columns: 1fr 1fr; }
+        .hero-grid { grid-template-columns: 1fr; gap: 44px; justify-items: center; }
+      }
+      @media (max-width: 560px) {
+        .wrap { padding: 0 28px; }
+        .feat-grid, .vgrid { grid-template-columns: 1fr; }
+        .hero-inner { padding: 48px 0 56px; }
+        .phone { width: 276px; }
+        .nav { height: 56px; }
+        h1 { font-size: 31px; line-height: 1.1; max-width: 100%; }
+        .lead { font-size: 16px; line-height: 1.65; padding: 0 14px; }
+        .value-inner, .features, .cta-inner { padding-top: 54px; padding-bottom: 54px; }
+        .value h2 { font-size: 26px; max-width: none; }
+        .vgrid { gap: 22px; }
+        .cta-row { gap: 14px; }
+        .appstore .t .s2 { font-size: 19px; }
+        /* center everything on mobile */
+        .hero-inner, .value-inner, .features { text-align: center; }
+        h1, .lead, .vlead { margin-left: auto; margin-right: auto; }
+        .cta-row { justify-content: center; }
+        .vpt { text-align: center; }
+        .feat { text-align: center; }
+        .feat .ic { margin-left: auto; margin-right: auto; }
+      }
+      @media (max-width: 380px) {
+        .wrap { padding: 0 22px; }
+        h1 { font-size: 29px; }
+        .value h2 { font-size: 23px; }
+        .langs button { padding: 6px 8px; }
+        .brand { font-size: 15px; letter-spacing: 0.12em; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="index.html"><span class="dot"></span> CivSafe</a>
+        <div class="langs" id="langs">
+          <button data-lang="ru" class="active">RU</button>
+          <button data-lang="uk">UA</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-t="eyebrow"></p>
+            <h1 id="h1"></h1>
+            <p class="lead" data-t="lead"></p>
+            <div class="cta-row">
+              <a class="appstore" id="storeBtn1" href="#">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.536c-.029-2.93 2.394-4.335 2.502-4.404-1.362-1.992-3.479-2.265-4.236-2.296-1.805-.182-3.521 1.062-4.437 1.062-.914 0-2.323-1.035-3.82-1.007-1.967.029-3.78 1.142-4.792 2.903-2.043 3.542-.523 8.785 1.465 11.66.971 1.406 2.13 2.983 3.65 2.927 1.464-.057 2.016-.947 3.787-.947 1.77 0 2.27.947 3.821.918 1.575-.029 2.575-1.434 3.541-2.844 1.116-1.63 1.575-3.21 1.603-3.292-.035-.016-3.074-1.18-3.104-4.679zM14.13 4.36c.81-.979 1.355-2.341 1.206-3.696-1.166.047-2.578.776-3.415 1.755-.751.87-1.408 2.256-1.231 3.587 1.301.101 2.629-.661 3.44-1.646z"/></svg>
+                <span class="t"><span class="s1" data-store-small></span><span class="s2">App Store</span></span>
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="slides" id="slides"></div>
+              </div>
+            </div>
+            <div class="dots" id="dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value">
+      <div class="wrap value-inner">
+        <h2 id="valueH2"></h2>
+        <p class="vlead" data-t="valueLead"></p>
+        <div class="vgrid" id="vgrid"></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="wrap">
+        <h2 data-t="featTitle"></h2>
+        <div class="feat-grid" id="featGrid"></div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap cta-inner">
+        <h2 data-t="ctaTitle"></h2>
+        <p data-t="ctaSub"></p>
+        <a class="appstore" id="storeBtn2" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.536c-.029-2.93 2.394-4.335 2.502-4.404-1.362-1.992-3.479-2.265-4.236-2.296-1.805-.182-3.521 1.062-4.437 1.062-.914 0-2.323-1.035-3.82-1.007-1.967.029-3.78 1.142-4.792 2.903-2.043 3.542-.523 8.785 1.465 11.66.971 1.406 2.13 2.983 3.65 2.927 1.464-.057 2.016-.947 3.787-.947 1.77 0 2.27.947 3.821.918 1.575-.029 2.575-1.434 3.541-2.844 1.116-1.63 1.575-3.21 1.603-3.292-.035-.016-3.074-1.18-3.104-4.679zM14.13 4.36c.81-.979 1.355-2.341 1.206-3.696-1.166.047-2.578.776-3.415 1.755-.751.87-1.408 2.256-1.231 3.587 1.301.101 2.629-.661 3.44-1.646z"/></svg>
+          <span class="t"><span class="s1" data-store-small></span><span class="s2">App Store</span></span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap foot">
+        <div class="links">
+          <a href="privacy-terms/index.html#privacy" data-t="linkPrivacy"></a>
+          <a href="privacy-terms/index.html#terms" data-t="linkTerms"></a>
+          <a href="mailto:support@civsafe.app">support@civsafe.app</a>
+        </div>
+        <div class="cp">© 2026 CivSafe</div>
+      </div>
+    </footer>
+
+    <script>
+      // Paste your App Store link here once the app is live, e.g. "https://apps.apple.com/app/id0000000000".
+      var APP_STORE_URL = "";
+
+      var APPLE_PATH = "M17.05 12.536c-.029-2.93 2.394-4.335 2.502-4.404-1.362-1.992-3.479-2.265-4.236-2.296-1.805-.182-3.521 1.062-4.437 1.062-.914 0-2.323-1.035-3.82-1.007-1.967.029-3.78 1.142-4.792 2.903-2.043 3.542-.523 8.785 1.465 11.66.971 1.406 2.13 2.983 3.65 2.927 1.464-.057 2.016-.947 3.787-.947 1.77 0 2.27.947 3.821.918 1.575-.029 2.575-1.434 3.541-2.844 1.116-1.63 1.575-3.21 1.603-3.292-.035-.016-3.074-1.18-3.104-4.679zM14.13 4.36c.81-.979 1.355-2.341 1.206-3.696-1.166.047-2.578.776-3.415 1.755-.751.87-1.408 2.256-1.231 3.587 1.301.101 2.629-.661 3.44-1.646z";
+      var SHOTS = ["airraid", "mines", "firstaid", "emergencybag"];
+
+      var T = {
+        ru: {
+          eyebrow: "Справочник для гражданских",
+          h1a: "Выживание", h1b: " в условиях войны",
+          lead: "Исчерпывающие инструкции для гражданских: что делать при обстреле, авиаударе, атаке дронов, химической угрозе, как собрать тревожный чемоданчик и эвакуироваться. Всё работает без интернета.",
+          storeSmall: "Скачать в",
+          sliderMoreTitle: "И это лишь часть",
+          sliderMoreText: "В приложении — 19 разделов по выживанию, тренировки и симулятор. Скачайте, чтобы открыть всё.",
+          offline: "Работает офлайн — без интернета",
+          valueH2a: "Когда каждая секунда", valueH2b: " на счету",
+          valueLead: "В критической ситуации нет времени искать информацию в интернете — особенно когда связи нет. CivSafe держит проверенные алгоритмы действий прямо в кармане и работает всегда: офлайн, без регистрации, на вашем языке.",
+          values: [
+            { h: "Готовность", t: "вместо паники", d: "Чёткие пошаговые алгоритмы вместо растерянности в самый важный момент." },
+            { h: "Вся семья", t: "под защитой", d: "Отдельные разделы для эвакуации с детьми, пожилыми и домашними животными." },
+            { h: "Всегда", t: "под рукой", d: "Установили один раз — пользуетесь офлайн в любой момент, даже без сети." }
+          ],
+          featTitle: "Что внутри",
+          features: [
+            { t: "19 разделов выживания", d: "Авиаудары, дроны, химугрозы, мины, эвакуация, первая помощь, оккупация и другое." },
+            { t: "Тренировки и симулятор", d: "Квиз готовности, таймер тревоги, симулятор ситуаций и карточки памяти." },
+            { t: "Работает офлайн", d: "Все материалы доступны без сети — когда связь пропадает, приложение работает." },
+            { t: "Экстренные номера", d: "Актуальные номера служб для 12 стран — подставляются автоматически." },
+            { t: "Личный чек-лист готовности", d: "Отметьте, что уже собрано — документы, аптечка, запасы воды и еды — и видьте свой уровень готовности." },
+            { t: "Аудиоозвучивание", d: "Любой раздел можно прослушать вслух на нужном языке." }
+          ],
+          ctaTitle: "Подготовьтесь заранее",
+          ctaSub: "Скачайте CivSafe бесплатно и держите инструкции по выживанию под рукой — даже без интернета.",
+          linkPrivacy: "Политика конфиденциальности",
+          linkTerms: "Условия использования"
+        },
+        uk: {
+          eyebrow: "Довідник для цивільних",
+          h1a: "Виживання", h1b: " в умовах війни",
+          lead: "Вичерпні інструкції для цивільних: що робити під час обстрілу, авіаудару, атаки дронів, хімічної загрози, як зібрати тривожну валізу та евакуюватися. Усе працює без інтернету.",
+          storeSmall: "Завантажити в",
+          sliderMoreTitle: "Це лише частина",
+          sliderMoreText: "У застосунку — 19 розділів з виживання, тренування та симулятор. Завантажте, щоб відкрити все.",
+          offline: "Працює офлайн — без інтернету",
+          valueH2a: "Коли кожна секунда", valueH2b: " на рахунку",
+          valueLead: "У критичній ситуації немає часу шукати інформацію в інтернеті — особливо коли зв’язку немає. CivSafe тримає перевірені алгоритми дій просто в кишені й працює завжди: офлайн, без реєстрації, вашою мовою.",
+          values: [
+            { h: "Готовність", t: "замість паніки", d: "Чіткі покрокові алгоритми замість розгубленості в найважливіший момент." },
+            { h: "Уся родина", t: "під захистом", d: "Окремі розділи для евакуації з дітьми, літніми людьми та домашніми тваринами." },
+            { h: "Завжди", t: "під рукою", d: "Встановили один раз — користуєтеся офлайн будь-якої миті, навіть без мережі." }
+          ],
+          featTitle: "Що всередині",
+          features: [
+            { t: "19 розділів виживання", d: "Авіаудари, дрони, хімзагрози, міни, евакуація, перша допомога, окупація та інше." },
+            { t: "Тренування та симулятор", d: "Квіз готовності, таймер тривоги, симулятор ситуацій і картки пам’яті." },
+            { t: "Працює офлайн", d: "Усі матеріали доступні без мережі — коли зв’язок зникає, застосунок працює." },
+            { t: "Екстрені номери", d: "Актуальні номери служб для 12 країн — підставляються автоматично." },
+            { t: "Особистий чек-лист готовності", d: "Позначте, що вже зібрано — документи, аптечка, запаси води та їжі — і бачте свій рівень готовності." },
+            { t: "Аудіоозвучення", d: "Будь-який розділ можна прослухати вголос потрібною мовою." }
+          ],
+          ctaTitle: "Підготуйтеся заздалегідь",
+          ctaSub: "Завантажте CivSafe безкоштовно й тримайте інструкції з виживання під рукою — навіть без інтернету.",
+          linkPrivacy: "Політика конфіденційності",
+          linkTerms: "Умови використання"
+        },
+        en: {
+          eyebrow: "Field guide for civilians",
+          h1a: "Survival", h1b: " in wartime",
+          lead: "Comprehensive guidance for civilians: what to do during shelling, an air raid, a drone attack or a chemical threat, how to pack a go-bag and evacuate. Everything works offline.",
+          storeSmall: "Download on the",
+          sliderMoreTitle: "This is just a glimpse",
+          sliderMoreText: "The app has 19 survival sections plus training and a simulator. Download to unlock everything.",
+          offline: "Works offline — no internet needed",
+          valueH2a: "When every second", valueH2b: " counts",
+          valueLead: "In a crisis there's no time to search the internet — especially when there's no signal. CivSafe keeps proven action plans right in your pocket and always works: offline, no sign-up, in your language.",
+          values: [
+            { h: "Readiness", t: "instead of panic", d: "Clear step-by-step plans instead of confusion at the moment that matters most." },
+            { h: "The whole family", t: "protected", d: "Dedicated sections for evacuating with children, elderly relatives and pets." },
+            { h: "Always", t: "at hand", d: "Install once — use it offline anytime, even with no network." }
+          ],
+          featTitle: "What's inside",
+          features: [
+            { t: "19 survival sections", d: "Air raids, drones, chemical threats, mines, evacuation, first aid, occupation and more." },
+            { t: "Training & simulator", d: "Readiness quiz, alert timer, scenario simulator and memory flashcards." },
+            { t: "Works offline", d: "All content available with no connection — when the network drops, the app keeps working." },
+            { t: "Emergency numbers", d: "Up-to-date service numbers for 12 countries — filled in automatically." },
+            { t: "Personal readiness checklist", d: "Tick off what's ready — documents, first-aid kit, water and food supplies — and see your readiness level." },
+            { t: "Read aloud", d: "Any section can be listened to in the selected language." }
+          ],
+          ctaTitle: "Be ready in advance",
+          ctaSub: "Download CivSafe for free and keep survival guidance at hand — even without internet.",
+          linkPrivacy: "Privacy Policy",
+          linkTerms: "Terms of Use"
+        }
+      };
+
+      var FEAT_ICONS = [
+        '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+        '<path d="M4 4h16v12H4z"/><path d="M2 20h20"/>',
+        '<path d="M5 12.5 10 17l9-9"/>',
+        '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5 14a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.92 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8 11a16 16 0 0 0 5 5l1.36-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
+        '<path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6l1 1 2-2"/><path d="M4 12l1 1 2-2"/><path d="M4 18l1 1 2-2"/>',
+        '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/>'
+      ];
+
+      var state = { lang: "ru" };
+
+      function setStoreBtn(btn, d) {
+        var small = btn.querySelector("[data-store-small]");
+        if (small) small.textContent = d.storeSmall;
+        if (APP_STORE_URL && APP_STORE_URL.length > 0) {
+          btn.href = APP_STORE_URL; btn.setAttribute("target", "_blank"); btn.setAttribute("rel", "noopener");
+          btn.onclick = null;
+        } else {
+          btn.href = "#"; btn.onclick = function (e) { e.preventDefault(); };
+        }
+      }
+
+      function apply() {
+        var d = T[state.lang];
+        document.documentElement.lang = state.lang;
+        document.querySelectorAll("#langs button").forEach(function (b) {
+          b.classList.toggle("active", b.dataset.lang === state.lang);
+        });
+        document.getElementById("h1").innerHTML = '<span class="o">' + d.h1a + "</span>" + d.h1b;
+        document.getElementById("valueH2").innerHTML = '<span class="o">' + d.valueH2a + "</span>" + d.valueH2b;
+        document.querySelectorAll("[data-t]").forEach(function (el) {
+          var k = el.dataset.t;
+          if (d[k] !== undefined) el.textContent = d[k];
+        });
+        setStoreBtn(document.getElementById("storeBtn1"), d);
+        setStoreBtn(document.getElementById("storeBtn2"), d);
+
+        document.getElementById("vgrid").innerHTML = d.values.map(function (v) {
+          return '<div class="vpt"><h3>' + v.h + ' <span>' + v.t + "</span></h3><p>" + v.d + "</p></div>";
+        }).join("");
+
+        document.getElementById("featGrid").innerHTML = d.features.map(function (f, i) {
+          return '<div class="feat"><div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">' +
+            FEAT_ICONS[i] + "</svg></div><h3>" + f.t + "</h3><p>" + f.d + "</p></div>";
+        }).join("");
+
+        buildSlides(d);
+      }
+
+      var slider = { idx: 0, count: 0, timer: null, startX: 0, dx: 0, dragging: false };
+
+      function buildSlides(d) {
+        var html = SHOTS.map(function (s, i) {
+          return '<div class="slide"><img src="shots/' + s + "-" + state.lang + '.jpg" alt="" ' +
+            (i === 0 ? 'loading="eager"' : 'loading="lazy"') + "></div>";
+        }).join("");
+        html += '<div class="slide"><div class="slide-cta">' +
+          '<div class="lock"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>' +
+          "<h3>" + d.sliderMoreTitle + "</h3>" +
+          "<p>" + d.sliderMoreText + "</p>" +
+          '<a class="appstore" id="storeBtn3" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + APPLE_PATH + '"/></svg>' +
+          '<span class="t"><span class="s1">' + d.storeSmall + '</span><span class="s2">App Store</span></span></a>' +
+          "</div></div>";
+        document.getElementById("slides").innerHTML = html;
+        slider.count = SHOTS.length + 1;
+        slider.idx = 0;
+        setStoreBtn(document.getElementById("storeBtn3"), d);
+        buildDots();
+        goTo(0, false);
+        startAuto();
+      }
+
+      function buildDots() {
+        var dots = document.getElementById("dots");
+        var html = "";
+        for (var i = 0; i < slider.count; i++) html += '<button type="button" aria-label="slide"></button>';
+        dots.innerHTML = html;
+        dots.querySelectorAll("button").forEach(function (b, k) {
+          b.addEventListener("click", function () { goTo(k, true); startAuto(); });
+        });
+      }
+
+      function goTo(i, animate) {
+        if (i < 0) i = slider.count - 1;
+        if (i >= slider.count) i = 0;
+        slider.idx = i;
+        var track = document.getElementById("slides");
+        track.classList.toggle("anim", !!animate);
+        track.style.transform = "translateX(" + (-i * 100) + "%)";
+        document.querySelectorAll("#dots button").forEach(function (b, k) {
+          b.classList.toggle("active", k === i);
+          if (k === i) b.setAttribute("aria-current", "true");
+          else b.removeAttribute("aria-current");
+        });
+      }
+
+      function startAuto() {
+        stopAuto();
+        slider.timer = setInterval(function () { goTo(slider.idx + 1, true); }, 3000);
+      }
+      function stopAuto() { if (slider.timer) { clearInterval(slider.timer); slider.timer = null; } }
+
+      function initSwipe() {
+        var screen = document.querySelector(".phone-screen");
+        var track = document.getElementById("slides");
+        screen.addEventListener("pointerdown", function (e) {
+          slider.dragging = true; slider.startX = e.clientX; slider.dx = 0;
+          track.classList.remove("anim"); stopAuto();
+          try { screen.setPointerCapture(e.pointerId); } catch (err) {}
+        });
+        screen.addEventListener("pointermove", function (e) {
+          if (!slider.dragging) return;
+          slider.dx = e.clientX - slider.startX;
+          var pct = (slider.dx / screen.clientWidth) * 100;
+          track.style.transform = "translateX(" + (-slider.idx * 100 + pct) + "%)";
+        });
+        function end() {
+          if (!slider.dragging) return;
+          slider.dragging = false;
+          var threshold = screen.clientWidth * 0.18;
+          if (slider.dx > threshold) goTo(slider.idx - 1, true);
+          else if (slider.dx < -threshold) goTo(slider.idx + 1, true);
+          else goTo(slider.idx, true);
+          startAuto();
+        }
+        screen.addEventListener("pointerup", end);
+        screen.addEventListener("pointercancel", end);
+        screen.addEventListener("lostpointercapture", end);
+        screen.addEventListener("mouseenter", stopAuto);
+        screen.addEventListener("mouseleave", function () { if (!slider.dragging) startAuto(); });
+      }
+
+      document.getElementById("langs").addEventListener("click", function (e) {
+        if (e.target.dataset.lang) { state.lang = e.target.dataset.lang; apply(); }
+      });
+      apply();
+      initSwipe();
+    </script>
+  </body>
+</html>
